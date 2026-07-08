@@ -1,14 +1,41 @@
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
+  const [ darkMode, setDarkMode ] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark' : ''}`}>
+
+      <nav>
+        <div className="nav-content">
+          <h1>Chengmin Jiang</h1>
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button onClick={() => setDarkMode(!darkMode)} className="theme-toggle">
+              {darkMode ? '☀️ Light' : '🌙 Dark'}
+            </button>
+          </div>
+        </div>
+        
+      </nav>
       <header>
         <h1>Chengmin Jiang</h1>
         <p>Aspiring Software Engineer | Toronto, ON</p>
       </header>
       <main>
-        <section>
+        <section id="about">
           <h2>About Me</h2>
           <p> Hi, I'm Nick. I graduated from the University of Toronto in 2021 with a Computer Science Specialist degree and a major in Mathematics. </p>
           <p> After graduation, I worked for one year as a Customer Application Engineer. While the role helped me develop communication and client-facing skills,
@@ -32,7 +59,7 @@ function App() {
             <div className="skill-card">Problem Solving</div>
           </div>
         </section>
-        <section>
+        <section id="projects">
           <h2>Projects</h2>
           <p>Coming soon — watch this space!</p>
         </section>
@@ -63,7 +90,7 @@ function App() {
             </p>
           </div>
         </section>
-        <section>
+        <section id="contact">
           <h2>Contact</h2>
           <p>GitHub: <a href="https://github.com/Nick991225">Nick991225</a></p>
           <p>LinkedIn: </p>
