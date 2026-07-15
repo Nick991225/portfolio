@@ -60,8 +60,27 @@ function App() {
           </div>
         </section>
         <section id="projects">
-          <h2>Projects</h2>
-          <p>Coming soon — watch this space!</p>
+          <h2>Featured Projects</h2>
+          <div className="projects-grid">
+
+            <div className="project-card">
+              <h3>Personal Portfolio Website</h3>
+              <p>A clean, responsive single-page portfolio built with React and Vite. Includes dark mode, smooth navigation, and mobile-first design.</p>
+              <p className="tech">React • Vite • JavaScript • CSS • Vercel</p>
+              <div className="project-links">
+                <a href="https://github.com/Nick991225/portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://portfolio-kappa-dusky-85.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <h3>Coming Soon</h3>
+              <div className="project-links">
+                <span>Coming Soon</span>
+              </div>
+            </div>
+
+          </div>
         </section>
         <section>
           <h2>Education</h2>
