@@ -14,30 +14,37 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`}>
-
-      <nav>
+      <nav className="navbar">
         <div className="nav-content">
-          <h1>Chengmin Jiang</h1>
+          <h1>Nick Jiang</h1>
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
-            <button onClick={() => setDarkMode(!darkMode)} className="theme-toggle">
+            <button 
+              onClick={() => setDarkMode(!darkMode)} 
+              className="theme-toggle"
+              aria-label="Toggle dark mode"
+            >
               {darkMode ? '☀️ Light' : '🌙 Dark'}
             </button>
           </div>
         </div>
-        
       </nav>
-      <header>
+
+      <header className="hero">
         <h1>Chengmin Jiang</h1>
-        <p>Aspiring Software Engineer | Toronto, ON</p>
+        <p className="tagline">Aspiring Junior Software Engineer based in Toronto</p>
+        <p>UofT CS & Math '21 | Concordia Applied Computer Science (2026)</p>
       </header>
+
       <main>
-        <section id="about">
+        <section id="about" className="section">
           <h2>About Me</h2>
-          <p> Hi, I'm Nick. I graduated from the University of Toronto in 2021 with a Computer Science Specialist degree and a major in Mathematics. </p>
+          <p> Hi, I'm Chengmin. I graduated from the University of Toronto in 2021 with a Computer Science Specialist degree and a major in Mathematics. </p>
           <p> After graduation, I worked for one year as a Customer Application Engineer. While the role helped me develop communication and client-facing skills,
              I realized I wanted to strengthen my core software development abilities. </p>
           <p> After a period of reflection, I decided to actively rebuild my technical foundation.
@@ -61,19 +68,18 @@ function App() {
           </div>
         </section>
         
-        <section id="projects">
-          <h2>Projects</h2>
+        <section id="projects" className="section">
+          <h2>Featured Projects</h2>
           <div className="projects-grid">
             <div className="project-card">
               <h3>Personal Portfolio Website</h3>
-              <p>Responsive single-page portfolio with dark mode and clean navigation.</p>
-              <p className="tech">React • Vite • CSS • Vercel</p>
+              <p>A clean and responsive single-page portfolio with dark mode support and smooth navigation.</p>
+              <p className="tech">React • Vite • JavaScript • CSS • Vercel</p>
               <div className="project-links">
                 <a href="https://github.com/Nick991225/portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://portfolio-kappa-dusky-85.vercel.app" target="_blank" rel="noopener noreferrer">Live</a>
+                <a href="https://portfolio-kappa-dusky-85.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
               </div>
             </div>
-
             <div className="project-card">
               <h3>CLI Task & Expense Tracker</h3>
               <p>Python command-line tool for managing tasks and expenses (In Progress).</p>
@@ -85,7 +91,7 @@ function App() {
           </div>
         </section>
 
-        <section>
+        <section id="education" className="section">
           <h2>Education</h2>
           <div className="entry">
             <h3>University of Toronto</h3>
@@ -102,7 +108,7 @@ function App() {
             </p>
           </div>
         </section>
-        <section>
+        <section id="experience" className="section">
           <h2>Experience</h2>
           <div className="entry">
             <h3>Ivalua Inc</h3>
@@ -112,7 +118,7 @@ function App() {
             </p>
           </div>
         </section>
-        <section id="contact">
+        <section id="contact" className="section">
           <h2>Contact</h2>
           <p>GitHub: <a href="https://github.com/Nick991225">Nick991225</a></p>
           <p>LinkedIn: </p>
